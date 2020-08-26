@@ -1,0 +1,20 @@
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  &__field {
+    height: 30px;
+    width: 230px;
+    border: 1px solid #8080804f;
+    border-radius: 4px;
+
+    &_invalid {
+      border-color: #FA0000;
+    }
+  }
+}

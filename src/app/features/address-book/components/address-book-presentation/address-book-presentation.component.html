@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="address-book">
+    <h1 class="address-book__title">Адресная книга</h1>
+
+    <app-add-new-address-form (newAddress)="addAddress($event)">
+    </app-add-new-address-form>
+
+    <app-addresses-list [addresses]="addresses"
+                        (removeAddress)="deleteAddress($event)"
+                        (addToFavorites)="addAddressToFavorites($event)">
+    </app-addresses-list>
+  </div>
+</div>

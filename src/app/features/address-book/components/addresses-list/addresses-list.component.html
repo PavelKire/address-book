@@ -1,0 +1,22 @@
+<div class="addresses-list">
+  <div class="addresses-list__header">
+    <div class="addresses-list__last-name">Фамилия</div>
+    <div class="addresses-list__first-name">Имя</div>
+    <div class="addresses-list__patronymic">Отчество</div>
+    <div class="addresses-list__phone">Телефон</div>
+  </div>
+
+  <div class="addresses-list__items"
+       *ngIf="addresses?.length > 0">
+    <app-address-item *ngFor="let address of addresses"
+                      [address]="address"
+                      (removeAddress)="deleteAddress($event)"
+                      (addToFavorites)="addAddressToFavorites($event)">
+    </app-address-item>
+  </div>
+
+  <div class="addresses-list__warning"
+       *ngIf="addresses?.length === 0">
+    Адресная книга пустая.
+  </div>
+</div>

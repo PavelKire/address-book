@@ -1,0 +1,21 @@
+<form class="address-book__form"
+      [formGroup]="addAddressFrom"
+      (ngSubmit)="submit()">
+  <app-input class="address-book__input"
+             [label]="'Фамилия'"
+             formControlName="lastName">
+  </app-input>
+  <app-input class="address-book__input"
+             [label]="'Имя'"
+             formControlName="firstName">
+  </app-input>
+  <app-input class="address-book__input"
+             [label]="'Отчество'"
+             formControlName="patronymic">
+  </app-input>
+  <app-input class="address-book__input"
+             [label]="'Телефон'"
+             formControlName="phone">
+  </app-input>
+  <button class="address-book__button" type="submit">+</button>
+</form>

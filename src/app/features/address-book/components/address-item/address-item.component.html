@@ -1,0 +1,16 @@
+<div class="address">
+  <div class="address__checkbox">
+    <input class="star-checkbox"
+           type="checkbox"
+           [checked]="address?.selected"
+           (change)="addAddressToFavorites(address?.id)">
+  </div>
+  <div class="address__last-name">{{address?.lastName}}</div>
+  <div class="address__first-name">{{address?.firstName}}</div>
+  <div class="address__patronymic">{{address?.patronymic}}</div>
+  <div class="address__phone">{{address?.phone}}</div>
+  <div class="address__delete-button"
+       (click)="deleteAddress(address?.id)">
+    &#10006;
+  </div>
+</div>
