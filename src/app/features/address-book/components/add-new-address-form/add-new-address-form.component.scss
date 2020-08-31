@@ -1,8 +1,7 @@
 .address-book {
   &__form {
     display: flex;
-    align-items: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   &__input {
@@ -12,10 +11,12 @@
   &__button {
     height: 30px;
     width: 30px;
+    margin-top: 28px;
     background: #39b939;
     color: #FFFFFF;
     font-size: 24px;
     border: none;
+    border-radius: 4px;
     outline: none;
 
     &:hover {

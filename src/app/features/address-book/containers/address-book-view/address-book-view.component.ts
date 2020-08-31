@@ -17,7 +17,7 @@ export class AddressBookViewComponent implements OnInit {
     this.updateAddressBook();
   }
 
-  addNewAddress(address: AddressModel): void {
+  addNewAddress(address): void {
     this.addressBookService.addNewAddress(address);
     this.updateAddressBook();
   }

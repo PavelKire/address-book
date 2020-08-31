@@ -19,7 +19,7 @@
       position: absolute;
       visibility: visible;
     }
-    .star-checkbox:checked:before {
+    .star-checkbox:checked:before, .star-checkbox:hover:before {
       content: "\2605";
       position: absolute;
       color: gold;

@@ -2,6 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddressBookPresentationComponent } from './address-book-presentation.component';
 import { addressMock } from '../../../../core/mocks/address.mock';
+import { AddNewAddressFormComponent } from '../add-new-address-form/add-new-address-form.component';
+import { AddressesListComponent } from '../addresses-list/addresses-list.component';
+import { AddressItemComponent } from '../address-item/address-item.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from '../../../../shared/input/input.component';
 
 describe('AddressBookPresentationComponent', () => {
   let component: AddressBookPresentationComponent;
@@ -9,7 +14,15 @@ describe('AddressBookPresentationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressBookPresentationComponent ]
+      declarations: [
+        AddressBookPresentationComponent,
+        AddNewAddressFormComponent,
+        AddressesListComponent,
+        AddressItemComponent,
+        InputComponent
+      ],
+      providers: [ FormBuilder ],
+      imports: [ FormsModule, ReactiveFormsModule ]
     })
     .compileComponents();
   }));

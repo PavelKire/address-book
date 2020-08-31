@@ -1,8 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddressBookViewComponent } from './address-book-view.component';
-import {AddressBookService} from '../../services/address-book.service';
-import {addressFavoriteMock, addressMock} from '../../../../core/mocks/address.mock';
+import { AddressBookService } from '../../services/address-book.service';
+import { addressFavoriteMock, addressMock } from '../../../../core/mocks/address.mock';
+import { AddressBookPresentationComponent } from '../../components/address-book-presentation/address-book-presentation.component';
+import { AddNewAddressFormComponent } from '../../components/add-new-address-form/add-new-address-form.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddressesListComponent } from '../../components/addresses-list/addresses-list.component';
+import { InputComponent } from '../../../../shared/input/input.component';
+import { AddressItemComponent } from '../../components/address-item/address-item.component';
 
 describe('AddressBookViewComponent', () => {
   let component: AddressBookViewComponent;
@@ -11,8 +17,19 @@ describe('AddressBookViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressBookViewComponent ],
-      providers: [AddressBookService]
+      declarations: [
+        AddressBookViewComponent,
+        AddressBookPresentationComponent,
+        AddNewAddressFormComponent,
+        AddressesListComponent,
+        InputComponent,
+        AddressItemComponent
+      ],
+      providers: [
+        AddressBookService,
+        FormBuilder
+      ],
+      imports: [ FormsModule, ReactiveFormsModule ]
     })
     .compileComponents();
 
@@ -55,10 +72,10 @@ describe('AddressBookViewComponent', () => {
       firstName: 'Иван',
       lastName: 'Иванов',
       patronymic: 'Иванович',
-      phone: '+379299293232',
-      selected: false
+      phone: '+7(985)531-08-68'
     };
     component.addNewAddress(address);
+    component.addresses[0].id = 'f5dd7d51';
     expect(component.addresses).toEqual([addressMock]);
   });
 });

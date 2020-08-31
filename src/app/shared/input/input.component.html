@@ -1,9 +1,21 @@
 <div class="input">
   <label class="input__label">{{ label }}</label>
   <input class="input__field"
-         [ngClass]="{'input__field_invalid': showError}"
-         (blur)="onTouched()"
+         *ngIf="!mask"
+         [ngClass]="{'input__field_invalid': showError()}"
          [(ngModel)]="value"
-         (input)="valueChange($event.target.value)">
+         (input)="valueChange($event.target.value)"
+         [placeholder]="placeholder ? placeholder : ''">
+  <input class="input__field"
+         *ngIf="mask"
+         [ngClass]="{'input__field_invalid': showError()}"
+         [(ngModel)]="value"
+         (input)="valueChange($event.target.value)"
+         [textMask]="{mask: mask}"
+         [placeholder]="placeholder ? placeholder : ''">
+  <div class="input__error"
+       *ngIf="showError()">
+    {{ errorMessage }}
+  </div>
 </div>
 

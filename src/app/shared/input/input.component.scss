@@ -1,6 +1,7 @@
 .input {
   display: flex;
   flex-direction: column;
+  height: 80px;
 
   &__label {
     margin-bottom: 10px;
@@ -16,5 +17,15 @@
     &_invalid {
       border-color: #FA0000;
     }
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+
+  &__error {
+    color: #FA0000;
+    margin-top: 5px;
+    font-size: 13px;
   }
 }

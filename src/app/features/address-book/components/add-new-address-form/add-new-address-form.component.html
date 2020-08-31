@@ -1,5 +1,5 @@
 <form class="address-book__form"
-      [formGroup]="addAddressFrom"
+      [formGroup]="addAddressForm"
       (ngSubmit)="submit()">
   <app-input class="address-book__input"
              [label]="'Фамилия'"
@@ -15,7 +15,9 @@
   </app-input>
   <app-input class="address-book__input"
              [label]="'Телефон'"
-             formControlName="phone">
+             formControlName="phone"
+             [mask]="maskPhone"
+             [placeholder]="'+ 7 (NNN) NNN - NN - NN'">
   </app-input>
   <button class="address-book__button" type="submit">+</button>
 </form>
