@@ -1,7 +1,7 @@
 # AddressBook
 
 
-Link to the project http://ps-test.exposit.com/.
+https://docs.google.com/document/d/1f5qHtyRPc-NaBT-duj1D-srfquRMQc3fAdLNcqU4BS8/edit#
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
